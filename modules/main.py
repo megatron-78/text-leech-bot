@@ -162,10 +162,6 @@ async def account_login(bot: Client, m: Message):
     raw_text6 = input6.text
     await input6.delete(True)
     await editable.delete()
-    if raw_txt6 == 'Mg':
-        MR = "https://telegra.ph/file/b4dce37b877bae5b616e0.jpg"
-    else:
-        MR = raw_txt6
 
     thumb = input6.text
     if thumb.startswith("http://") or thumb.startswith("https://"):
