@@ -71,27 +71,27 @@ async def main():
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
-       f"𝐇𝐞𝐥𝐥𝐨 ❤️\n\n◆〓◆ ❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™ ◆〓◆\n\n❈ I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me ⟰ /upload Command And Then Follow Few Steps..", reply_markup=InlineKeyboardMarkup(
+       f"𝐇𝐞𝐥𝐥𝐨 ❤️\n\n◆〓◆ ❖ 『 𝗠ᴇɢᴀᴛʀᴏɴ 』 ❖ ™ ◆〓◆\n\n❈ I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me ⟰ /megatron Command And Then Follow Few Steps..", reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("✜ 𝐉𝐨𝐢𝐧 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜" ,url=f"https://t.me/Opleech_WD") ],
+                    InlineKeyboardButton("✜ 𝐉𝐨𝐢𝐧 𝐔𝐩𝐃𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ✜" ,url=f"https://t.me/Megatron906") ],
                     [
-                    InlineKeyboardButton("✜ 𝗔𝘀𝗵𝘂𝘁𝗼𝘀𝗵𝗚𝗼𝘀𝘄𝗮𝗺𝗶𝟮𝟰 ✜" ,url="https://t.me/AshutoshGoswami24") ],
+                    InlineKeyboardButton("✜ 『 𝗠ᴇɢᴀᴛʀᴏɴ 』 ✜" ,url="https://t.me/mk2648") ],
                     [
-                    InlineKeyboardButton("🦋 𝐅𝐨𝐥𝐥𝐨𝐰 𝐌𝐞 🦋" ,url="https://t.me/Opleech_WD/13") ]                               
+                    InlineKeyboardButton("✜ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫👨‍💻 ✜" ,url="https://t.me/mk2648") ]                               
             ]))
 
 
-@bot.on_message(filters.command("stop"))
+@bot.on_message(filters.command("rukja"))
 async def restart_handler(_, m):
     await m.reply_text("♦ 𝐒𝐭𝐨𝐩𝐩𝐞𝐭 ♦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["upload"]))
+@bot.on_message(filters.command(["megatron"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐀 𝐓𝐱𝐭 𝐅𝐢𝐥𝐞 𝐒𝐞𝐧𝐝 𝐇𝐞𝐫𝐞 ⏍')
+    editable = await m.reply_text('**➠ 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲 \n\n➠ TXT FORMAT : LINK : URL \n➠ 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲:  @mk2648 **')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -152,13 +152,12 @@ async def account_login(bot: Client, m: Message):
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
-    highlighter  = f"️ ⁪⁬⁮⁮⁮"
-    if raw_text3 == 'Robin':
-        MR = highlighter 
+    if raw_text3 == 'Mg':
+        MR = "𝗠ᴇɢᴀᴛʀᴏɴ❤️" 
     else:
         MR = raw_text3
    
-    await editable.edit("🌄 Now send the Thumb url\nEg » https://graph.org/file/419c60736fbac058c9e50.jpg\n\n Or if don't want thumbnail send = no")
+    await editable.edit("🌄 Now send the Thumb url\nEg » http://graph.org/file/be3a3c45c761ec78e279e.jpg\n\n Or if don't want thumbnail send = no")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -217,8 +216,8 @@ async def account_login(bot: Client, m: Message):
             
             try:  
                 
-                cc = f'**[ 🎥 ] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**'
-                cc1 = f'**[ 📁 ] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf \n✉️ 𝐁𝐚𝐭𝐜𝐡 » **{raw_text0}**'
+                cc = f'**[ 🎥 ] 𝗩ɪᴅ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n𝗩ɪᴅ 𝗡ᴀᴍᴇ ➤ '{𝗻𝗮𝗺𝗲𝟭}{MR}.mkv'\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
+                cc1 = f'**[ 📁 ] 𝗣ᴅғ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n𝗣ᴅғ 𝗡ᴀᴍᴇ ➤ '{𝗻𝗮𝗺𝗲𝟭}{MR}.pdf'\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -263,9 +262,6 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("✅ 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐃𝐨𝐧𝐞")
 
-print("""
-█░█░█ █▀█ █▀█ █▀▄ █▀▀ █▀█ ▄▀█ █▀▀ ▀█▀     ▄▀█ █▀ █░█ █░█ ▀█▀ █▀█ █▀ █░█   ░ █▀▀
-▀▄▀▄▀ █▄█ █▄█ █▄▀ █▄▄ █▀▄ █▀█ █▀░ ░█░     █▀█ ▄█ █▀█ █▄█ ░█░ █▄█ ▄█ █▀█   ▄ █▄█""")
 print("""✅ 𝐃𝐞𝐩𝐥𝐨𝐲 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 ✅""")
 print("""✅ 𝐁𝐨𝐭 𝐖𝐨𝐫𝐤𝐢𝐧𝐠 ✅""")
 
