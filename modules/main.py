@@ -68,7 +68,7 @@ async def main():
     except (KeyboardInterrupt, SystemExit):
         await stop_bot()
     
-@bot.on_message(filters.command(["start"]))
+@bot.on_message(filters.command(["st"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
        f"𝐇𝐞𝐥𝐥𝐨 ❤️\n\n◆〓◆ ❖ 『 𝗠ᴇɢᴀᴛʀᴏɴ 』 ❖ ™ ◆〓◆\n\n❈ I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me ⟰ /txt Command And Then Follow Few Steps..", reply_markup=InlineKeyboardMarkup(
@@ -82,9 +82,9 @@ async def account_login(bot: Client, m: Message):
             ]))
 
 
-@bot.on_message(filters.command("rukja"))
+@bot.on_message(filters.command("ruk"))
 async def restart_handler(_, m):
-    await m.reply_text("♦ 𝐒𝐭𝐨𝐩𝐩𝐞𝐭 ♦", True)
+    await m.reply_text("♦ Ruk Gya Boss♦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
