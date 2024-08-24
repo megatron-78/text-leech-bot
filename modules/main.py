@@ -162,6 +162,10 @@ async def account_login(bot: Client, m: Message):
     raw_text6 = input6.text
     await input6.delete(True)
     await editable.delete()
+    if raw_txt6 = Mg
+        MR = "https://telegra.ph/file/b4dce37b877bae5b616e0.jpg"
+    else:
+        MR = raw_txt6
 
     thumb = input6.text
     if thumb.startswith("http://") or thumb.startswith("https://"):
@@ -209,8 +213,8 @@ async def account_login(bot: Client, m: Message):
             
             try:  
                 
-                cc = f'**[ 🎥 ] 𝗩ɪᴅ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n\n```𝗩ɪᴅ 𝗡ᴀᴍᴇ ➤ {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv```\n\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
-                cc1 = f'**[ 📁 ] 𝗣ᴅғ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n\n```𝗣ᴅғ 𝗡ᴀᴍᴇ ➤ {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf```\n\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
+                cc = f'**[ 🎥 ] 𝗩ɪᴅ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n\n𝗩ɪᴅ 𝗡ᴀᴍᴇ ➤ {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv\n\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
+                cc1 = f'**[ 📁 ] 𝗣ᴅғ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n\n𝗣ᴅғ 𝗡ᴀᴍᴇ ➤ {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf\n\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
