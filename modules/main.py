@@ -216,8 +216,8 @@ async def account_login(bot: Client, m: Message):
             
             try:  
                 
-                cc = f'**[ 🎥 ] 𝗩ɪᴅ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n𝗩ɪᴅ 𝗡ᴀᴍᴇ ➤ '{𝗻𝗮𝗺𝗲𝟭}{MR}.mkv'\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
-                cc1 = f'**[ 📁 ] 𝗣ᴅғ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n𝗣ᴅғ 𝗡ᴀᴍᴇ ➤ '{𝗻𝗮𝗺𝗲𝟭}{MR}.pdf'\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
+                cc = f'**[ 🎥 ] 𝗩ɪᴅ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n𝗩ɪᴅ 𝗡ᴀᴍᴇ ➤ `{𝗻𝗮𝗺𝗲𝟭}{MR}.mkv`\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
+                cc1 = f'**[ 📁 ] 𝗣ᴅғ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n𝗣ᴅғ 𝗡ᴀᴍᴇ ➤ `{𝗻𝗮𝗺𝗲𝟭}{MR}.pdf`\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
@@ -243,7 +243,7 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"❊⟱ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📝 𝐍𝐚𝐦𝐞 » `{name}\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `{url}`"
+                    Show = f"❊⟱ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📝 𝐍𝐚𝐦𝐞 » `{name}\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `{url}`\n𝗕𝗼𝘁 𝗠𝗮𝗱𝗲 𝗕𝘆 ➤ @mk2648"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
