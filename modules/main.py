@@ -68,7 +68,7 @@ async def main():
     except (KeyboardInterrupt, SystemExit):
         await stop_bot()
     
-@bot.on_message(filters.command(["st"]))
+@bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
        f"𝐇𝐞𝐥𝐥𝐨 ❤️\n\n◆〓◆ ❖ 『 𝗠ᴇɢᴀᴛʀᴏɴ 』 ❖ ™ ◆〓◆\n\n❈ I Am A Bot For Download Links From Your **.TXT** File And Then Upload That File Om Telegram So Basically If You Want To Use Me First Send Me ⟰ /txt Command And Then Follow Few Steps..", reply_markup=InlineKeyboardMarkup(
@@ -91,7 +91,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["manu"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text('**➠ 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲 \n\n➠ TXT FORMAT : LINK : URL \n➠ 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲:  @mk2648 **')
+    editable = await m.reply_text('**➠ 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲 \n\n➠ TXT FORMAT : LINK : URL \n➠ 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲: [𝗠ᴇɢᴀᴛʀᴏɴ❤️](https://t.me/Megatron246)**')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -113,12 +113,12 @@ async def account_login(bot: Client, m: Message):
            return
     
    
-    await editable.edit(f"∝ 𝐓𝐨𝐭𝐚𝐥 𝐋𝐢𝐧𝐤 𝐅𝐨𝐮𝐧𝐝 𝐀𝐫𝐞 🔗** **{len(links)}**\n\n𝐒𝐞𝐧𝐝 𝐅𝐫𝐨𝐦 𝐖𝐡𝐞𝐫𝐞 𝐘𝐨𝐮 𝐖𝐚𝐧𝐭 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐈𝐧𝐢𝐭𝐚𝐥 𝐢𝐬 **1**")
+    await editable.edit(f"𝐓𝐨𝐭𝐚𝐥 𝐋𝐢𝐧𝐤 𝐅𝐨𝐮𝐧𝐝 𝐀𝐫𝐞 🔗** **{len(links)}**\n\n𝐒𝐞𝐧𝐝 𝐅𝐫𝐨𝐦 𝐖𝐡𝐞𝐫𝐞 𝐘𝐨𝐮 𝐖𝐚𝐧𝐭 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐈𝐧𝐢𝐭𝐚𝐥 𝐢𝐬 **1**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text = input0.text
     await input0.delete(True)
 
-    await editable.edit("∝ 𝐍𝐨𝐰 𝐏𝐥𝐞𝐚𝐬𝐞 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞")
+    await editable.edit("𝐍𝐨𝐰 𝐏𝐥𝐞𝐚𝐬𝐞 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞")
     input1: Message = await bot.listen(editable.chat.id)
     raw_text0 = input1.text
     await input1.delete(True)
@@ -153,7 +153,7 @@ async def account_login(bot: Client, m: Message):
     raw_text3 = input3.text
     await input3.delete(True)
     if raw_text3 == 'Mg':
-        MR = "𝗠ᴇɢᴀᴛʀᴏɴ❤️" 
+        MR = "[𝗠ᴇɢᴀᴛʀᴏɴ❤️](https://t.me/Megatron246)" 
     else:
         MR = raw_text3
    
@@ -209,8 +209,8 @@ async def account_login(bot: Client, m: Message):
             
             try:  
                 
-                cc = f'**[ 🎥 ] 𝗩ɪᴅ 𝗜ᴅ ➤** {str(count).zfill(3)}. ```𝗩ɪᴅ 𝗡ᴀᴍᴇ ➤ {𝗻𝗮𝗺𝗲𝟭}{MR}.mkv``` 𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
-                cc1 = f'**[ 📁 ] 𝗣ᴅғ 𝗜ᴅ ➤** {str(count).zfill(3)}. ```𝗣ᴅғ 𝗡ᴀᴍᴇ ➤ {𝗻𝗮𝗺𝗲𝟭}{MR}.pdf``` 𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **{raw_text0}**'
+                cc = f'**[ 🎥 ] 𝗩ɪᴅ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n\n𝗩ɪᴅ 𝗡ᴀᴍᴇ ➤ `{𝗻𝗮𝗺𝗲𝟭}{MR}[𝗠ᴇɢᴀᴛʀᴏɴ❤️](https://t.me/Megatron246).mkv` \n\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **[{raw_text0}](https://t.me/Megatron246)**'
+                cc1 = f'**[ 📁 ] 𝗣ᴅғ 𝗜ᴅ ➤** {str(count).zfill(3)}.\n\n𝗣ᴅғ 𝗡ᴀᴍᴇ ➤ `{𝗻𝗮𝗺𝗲𝟭}{MR}[𝗠ᴇɢᴀᴛʀᴏɴ❤️](https://t.me/Megatron246).pdf` \n\n𝗕ᴀᴛᴄʜ 𝗡ᴀᴍᴇ ➤ **[{raw_text0}](https://t.me/Megatron246)**'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
