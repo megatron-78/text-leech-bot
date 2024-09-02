@@ -188,7 +188,7 @@ async def account_login(bot: Client, m: Message):
                         url = re.search(r"(https://.*?playlist.m3u8.*?)\"", text).group(1)
 
             elif 'videos.classplusapp' in url:
-             url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgzNjkyMTIsIm9yZ0lkIjoyNjA1LCJ0eXBlIjoxLCJtb2JpbGUiOiI5MTcwODI3NzQyODkiLCJuYW1lIjoiQWNlIiwiZW1haWwiOm51bGwsImlzRmlyc3RMb2dpbiI6dHJ1ZSwiZGVmYXVsdExhbmd1YWdlIjpudWxsLCJjb3VudHJ5Q29kZSI6IklOIiwiaXNJbnRlcm5hdGlvbmFsIjowLCJpYXQiOjE2NDMyODE4NzcsImV4cCI6MTY0Mzg4NjY3N30.hM33P2ai6ivdzxPPfm01LAd4JWv-vnrSxGXqvCirCSpUfhhofpeqyeHPxtstXwe0'}).json()['url']
+             url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE1NzU3NDQzLCJvcmdJZCI6MTEyMjY2LCJ0eXBlIjoxLCJtb2JpbGUiOiI5MTk1MDg1NDc3OTIiLCJuYW1lIjoiSmFuYXJkYW4gS3VtYXIiLCJlbWFpbCI6bnVsbCwiaXNJbnRlcm5hdGlvbmFsIjowLCJkZWZhdWx0TGFuZ3VhZ2UiOiJFTiIsImNvdW50cnlDb2RlIjoiSU4iLCJjb3VudHJ5SVNPIjoiOTEiLCJ0aW1lem9uZSI6IkdNVCs1OjMwIiwiaXNEaXkiOnRydWUsIm9yZ0NvZGUiOiJrY3FzayIsImlzRGl5U3ViYWRtaW4iOjAsImZpbmdlcnByaW50SWQiOiIyYjMwMWMzNGI4OTFmYmEyYTVjZjJiNjI0MDc2NWE0MiIsImlhdCI6MTcyMjcwMTU1MiwiZXhwIjoxNzIzMzA2MzUyfQ.Uo5EqTgPgrq1le1Y_cyuIi3LGB-E54-lOXGDd2bDqqv57wvxPoqFvFOCyoyOZ1vx'}).json()['url']
 
             elif '/master.mpd' in url:
              id =  url.split("/")[-2]
