@@ -99,7 +99,7 @@ def save_authorized_channels():
         json.dump(authorized_channels, f)
 
 authorized_channels = load_authorized_channels()
-
+channel_id = get.chat.id
 # Add the channel to the authorized list and save it to the file
 if channel_id not in authorized_channels:
     authorized_channels.append(channel_id)
