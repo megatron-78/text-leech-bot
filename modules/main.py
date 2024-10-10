@@ -85,7 +85,7 @@ async def account_login(bot: Client, m: Message):
 @bot.on_message(filters.command("id"))
 async def id(client: Client, message: Message):
     chat_id = message.chat.id
-    user_id = message.from_user.id
+    
     if message.chat.type == "channel":
         chat_id = message.chat.id
         await message.reply_text(
