@@ -81,7 +81,7 @@ async def account_login(bot: Client, m: Message):
                     InlineKeyboardButton("✜ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫👨‍💻 ✜" ,url="https://t.me/mk2648") ]                               
             ]))
 
-@bot.on_message(filters.command("ic"))
+@bot.on_message(filters.command("id") & filters.channel)
 async def get_channel_id(client, message):
     channel = message.chat
     await message.reply_text(
@@ -93,19 +93,6 @@ async def get_channel_id(client, message):
 
 
     
-@bot.on_message(filters.private & filters.command("id"))
-async def id(bot: Client, update: Message):
-    if update.chat.type == "channel":
-        await update.reply_text(
-            f"**This Channel's ID:** {update.chat.id}",
-            disable_web_page_preview=True
-        )
-    else:
-        await update.reply_text(        
-            f"**Your Telegram ID :** {update.from_user.id}",
-            disable_web_page_preview=True
-        )
-
 
 @bot.on_message(filters.command("ruk"))
 async def restart_handler(_, m):
