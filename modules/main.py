@@ -90,10 +90,11 @@ async def get_channel_id(client, message):
     
 @bot.on_message(filters.command("id"))
 async def id(client: Client, message: Message):
+    channel = message.chat
     if message.chat.type == "channel":
         channel = message.chat
         await message.reply_text(
-            text=f"**This Channel's ID:** {channel.id}",
+            text=f"**This Channel's ID:** {channel.id} or {message.chat.id}",
             disable_web_page_preview=True
         )
     else:
