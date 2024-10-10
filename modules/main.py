@@ -107,23 +107,10 @@ def save_authorized_channels():
 authorized_channels = load_authorized_channels()
 
 # Add the channel to the authorized list and save it to the file
-if channel_id not in authorized_channels:
-    authorized_channels.append(channel_id)
-    save_authorized_channels()
+#if channel_id not in authorized_channels:
+   # authorized_channels.append(channel_id)
+    #save_authorized_channels()
     
-
-
-# Restrict commands to authorized channels only
-@app.on_message(filters.command("start") & filters.channel)
-async def start_in_channel(client, message):
-    # Check if the channel is authorized
-    if message.chat.id in authorized_channels:
-        await message.reply_text("This channel is authorized to use the bot.")
-    else:
-        await message.reply_text("This channel is not authorized to use the bot. Use `/add_channel` to authorize.")
-
-# Start the bot
-app.run()
 
 
 
