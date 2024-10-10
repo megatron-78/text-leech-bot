@@ -94,13 +94,11 @@ async def get_channel_id(client, message):
 
     
 @bot.on_message(filters.command("id"))
-async def id(client: Client, message: Message):
-    user_id = message.from_user.id
-    channel = message.chat
-    if message.chat.type == "channel":
+async def id(client, message):
+    if message.chat.type == channel:
         channel = message.chat
         await message.reply_text(
-            f"**This Channel's ID:** {channel.id} or {message.chat.id}"
+            f"**This Channel's ID:** {message.chat.id}"
         )
     else:
         await message.reply_text(        
