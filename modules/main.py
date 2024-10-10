@@ -152,7 +152,7 @@ async def restart_handler(_, m):
 async def account_login(bot: Client, m: Message):
     channel_id = m.chat.id
     if channel_id not in authorized_channels:
-        await m.reply_text()
+        await m.reply_text("❌❌❌❌❌❌")
     else:
         await m.reply_text("Hello")
 
