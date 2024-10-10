@@ -81,11 +81,11 @@ async def account_login(bot: Client, m: Message):
                     InlineKeyboardButton("✜ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫👨‍💻 ✜" ,url="https://t.me/mk2648") ]                               
             ]))
 
-@bot.on_message(filters.command("ic") & filters.channel)
+@bot.on_message(filters.command("ic"))
 async def get_channel_id(client, message):
     channel = message.chat
     await message.reply_text(
-        f"**Chat ID :** {channel.id}\nn"
+        f"**Chat ID : {channel.id}**\n\n"
         f"To add this Channel, Click to copy the below command\n\n"
         f"`/add_channel {channel.id}`\n\n"
         f"and Send to the Bot Directly"
@@ -95,18 +95,17 @@ async def get_channel_id(client, message):
     
 @bot.on_message(filters.command("id"))
 async def id(client: Client, message: Message):
+    user_id = message.from_user.id
     channel = message.chat
     if message.chat.type == "channel":
         channel = message.chat
         await message.reply_text(
-            text=f"**This Channel's ID:** {channel.id} or {message.chat.id}",
-            disable_web_page_preview=True
+            f"**This Channel's ID:** {channel.id} or {message.chat.id}"
         )
     else:
         await message.reply_text(        
-            text=f"**Your Telegram ID :** {message.from_user.id}",
-            disable_web_page_preview=True,
-        ) 
+            f"**Your Telegram ID :** {message.from_user.id}"
+        )
 
 
 @bot.on_message(filters.command("ruk"))
