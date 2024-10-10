@@ -70,9 +70,9 @@ async def main():
 
 
 auth_users = {}
-owner = [7535195022]
+owner_id = [7535195022]
 
-@bot.on_message(filters.command("add_auth") & filters.create(owner_filter))
+@bot.on_message(filters.command("add_auth") & filters.user(owner_id))
 async def add_auth_user(client: Client, message: Message):
     global authorized_users
     try:
