@@ -76,18 +76,12 @@ authorized_channels = []
 # Command Handler to authorize a channel
 @bot.on_message(filters.command("add_channel") & filters.user(auth_users))
 async def add_channel(client, message):
-    if message.chat.type == "channel":
-        # Get the channel ID
-        channel_id = message.chat.id
-        
-        # Add the channel to the authorized list
-        if channel_id not in authorized_channels:
-            authorized_channels.append(channel_id)
-            await message.reply_text(f"Channel `{channel_id}` has been authorized to use the bot.")
-        else:
-            await message.reply_text(f"Channel `{channel_id}` is already authorized.")
+    channel_id = message.chat.id
+    if channel_id not in authorized_channels:
+        authorized_channels.append(channel_id)
+        await message.reply_text(f"Channel `{channel_id}` has been authorized to use the bot.")
     else:
-        await message.reply_text("This command can only be used in channels.")
+        await message.reply_text(f"Channel `{channel_id}` is already authorized.")
 
 
 
@@ -107,9 +101,9 @@ def save_authorized_channels():
 authorized_channels = load_authorized_channels()
 
 # Add the channel to the authorized list and save it to the file
-#if channel_id not in authorized_channels:
-   # authorized_channels.append(channel_id)
-    #save_authorized_channels()
+if channel_id not in authorized_channels:
+    authorized_channels.append(channel_id)
+    save_authorized_channels()
     
 
 
