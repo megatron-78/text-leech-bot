@@ -69,43 +69,21 @@ async def main():
         await stop_bot()
 
 
-auth_users = [6622333718, 7535195022]
-# List to store authorized channel IDs
-authorized_channels = []
+auth_users = {}
+owner = [7535195022]
 
-# Command Handler to authorize a channel
-@bot.on_message(filters.command("add_channel") & filters.user(auth_users))
-async def add_channel(client, message):
-    channel_id = message.chat.id
-    if channel_id not in authorized_channels:
-        authorized_channels.append(channel_id)
-        await message.reply_text(f"Channel `{channel_id}` has been authorized to use the bot.")
-    else:
-        await message.reply_text(f"Channel `{channel_id}` is already authorized.")
-
-
-
-# Load authorized channels from a file
-def load_authorized_channels():
+@bot.on_message(filters.command("add_auth") & filters.create(owner_filter))
+async def add_auth_user(client: Client, message: Message):
+    global authorized_users
     try:
-        with open("authorized_channels.json", "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
-
-# Save authorized channels to a file
-def save_authorized_channels():
-    with open("authorized_channels.json", "w") as f:
-        json.dump(authorized_channels, f)
-
-authorized_channels = load_authorized_channels()
-channel_id = get.chat.id
-# Add the channel to the authorized list and save it to the file
-if channel_id not in authorized_channels:
-    authorized_channels.append(channel_id)
-    save_authorized_channels()
-    
-
+        new_user_id = int(message.text.split(maxsplit=1)[1])
+        if new_user_id not in auth_users:
+            authorized_users.append(new_user_id)
+            await message.reply(f"User {new_user_id} added to authorized users.")
+        else:
+            await message.reply(f"User {new_user_id} is already in the authorized users list.")
+    except (IndexError, ValueError):
+        await message.reply("Please provide a valid user ID.")
 
 
 
@@ -142,13 +120,6 @@ async def restart_handler(_, m):
     await m.reply_text("♦ Ruk Gya Boss♦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command(["mmk"]))
-async def account_login(bot: Client, m: Message):
-    channel_id = m.chat.id
-    if channel_id not in authorized_channels:
-        await m.reply_text("❌❌❌❌❌❌")
-    else:
-        await m.reply_text("Hello")
 
 @bot.on_message(filters.command(["manu"]))
 async def account_login(bot: Client, m: Message):
