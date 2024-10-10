@@ -94,14 +94,16 @@ async def get_channel_id(client, message):
 
     
 @bot.on_message(filters.private & filters.command("id"))
-async def id(client, message):
-    if message.chat.type == "channel":
-        await message.reply_text(
-            f"**This Channel's ID:** {message.chat.id}"
+async def id(bot: Client, update: Message):
+    if update.chat.type == "channel":
+        await update.reply_text(
+            f"**This Channel's ID:** {update.chat.id}",
+            disable_web_page_preview=True
         )
     else:
-        await message.reply_text(        
-            f"**Your Telegram ID :** {message.from_user.id}"
+        await update.reply_text(        
+            f"**Your Telegram ID :** {update.from_user.id}",
+            disable_web_page_preview=True
         )
 
 
