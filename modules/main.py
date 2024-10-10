@@ -96,7 +96,6 @@ async def id(client: Client, message: Message):
         await message.reply_text(        
             text=f"**Your Telegram ID :** {message.from_user.id}",
             disable_web_page_preview=True,
-            reply_markup=keyboard
         ) 
 
 
