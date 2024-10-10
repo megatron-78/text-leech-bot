@@ -69,21 +69,12 @@ async def main():
         await stop_bot()
 
 
-from pyrogram import Client, filters
-
-# Initialize the Pyrogram Client
-app = Client(
-    "my_bot",
-    api_id=YOUR_API_ID,           # Replace with your API ID
-    api_hash=YOUR_API_HASH,       # Replace with your API Hash
-    bot_token=YOUR_BOT_TOKEN      # Replace with your Bot Token
-)
-
+auth_users = [6622333718, 7535195022]
 # List to store authorized channel IDs
 authorized_channels = []
 
 # Command Handler to authorize a channel
-@app.on_message(filters.command("add_channel") & filters.user([YOUR_USER_ID]))
+@bot.on_message(filters.command("add_channel") & filters.user(auth_users))
 async def add_channel(client, message):
     if message.chat.type == "channel":
         # Get the channel ID
@@ -99,7 +90,6 @@ async def add_channel(client, message):
         await message.reply_text("This command can only be used in channels.")
 
 
-import json
 
 # Load authorized channels from a file
 def load_authorized_channels():
@@ -171,7 +161,13 @@ async def restart_handler(_, m):
     await m.reply_text("♦ Ruk Gya Boss♦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-
+@bot.on_message(filters.command(["mmk"]))
+async def account_login(bot: Client, m: Message):
+    channel_id = m.chat.id
+    if channel_id not in authorized_channels:
+        await m.reply_text()
+    else:
+        await m.reply_text("Hello")
 
 @bot.on_message(filters.command(["manu"]))
 async def account_login(bot: Client, m: Message):
