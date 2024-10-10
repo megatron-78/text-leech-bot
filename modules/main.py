@@ -69,7 +69,7 @@ async def main():
         await stop_bot()
 
 
-auth_users = {}
+auth_users = []
 owner_id = [7535195022]
 
 @bot.on_message(filters.command("add_auth") & filters.user(owner_id))
