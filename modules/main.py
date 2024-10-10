@@ -32,7 +32,7 @@ import aiohttp
 import io
 from vars import *
 from datetime import datetime, timedelta
-from telegram.ext import Updater, CommandHandler, CallbackContext
+
 from tqdm import tqdm
 import pytz
 
