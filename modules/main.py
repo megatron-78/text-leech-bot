@@ -93,7 +93,7 @@ async def get_channel_id(client, message):
 
 
     
-@bot.on_message(filters.command("id"))
+@bot.on_message(filters.command("id") & filters.channel)
 async def id(client, message):
     channel = message.chat.id
     channel = message.chat
