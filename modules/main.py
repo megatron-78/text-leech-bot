@@ -86,14 +86,14 @@ async def account_login(bot: Client, m: Message):
 async def id(client: Client, message: Message):
     chat_id = message.chat.id
     user_id = message.from_user.id
-    if update.chat.type == "channel":
+    if message.chat.type == "channel":
         chat_id = message.chat.id
-        await update.reply_text(
+        await message.reply_text(
             text=f"**This Channel's ID:** {chat_id}",
             disable_web_page_preview=True
         )
     else:
-        await update.reply_text(        
+        await message.reply_text(        
             text=f"**Your Telegram ID :** {update.from_user.id}",
             disable_web_page_preview=True,
             reply_markup=keyboard
