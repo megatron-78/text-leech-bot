@@ -99,7 +99,7 @@ async def id(client, message):
     channel = message.chat
     if message.chat.type == channel:
         await message.reply_text(
-            f"**This Channel's ID:** {message.chat.id}"
+            f"**This Channel's ID:** {channel}"
         )
     else:
         await message.reply_text(        
