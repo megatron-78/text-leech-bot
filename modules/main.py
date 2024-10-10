@@ -84,7 +84,12 @@ async def account_login(bot: Client, m: Message):
 @bot.on_message(filters.command("ic") & filters.channel)
 async def get_channel_id(client, message):
     channel = message.chat
-    await message.reply_text(f"Id : {channel.id}")
+    await message.reply_text(
+        f"**Chat ID :** {channel.id}\nn"
+        f"To add this Channel, Click to copy the below command\n\n"
+        f"`/add_channel {channel.id}`\n\n"
+        f"and Send to the Bot Directly"
+    )
 
 
     
