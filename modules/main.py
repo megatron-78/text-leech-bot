@@ -89,12 +89,12 @@ async def id(client: Client, message: Message):
     if message.chat.type == "channel":
         chat_id = message.chat.id
         await message.reply_text(
-            text=f"**This Channel's ID:** {chat_id}",
+            text=f"**This Channel's ID:** {chat_id} , {message.chat.id}",
             disable_web_page_preview=True
         )
     else:
         await message.reply_text(        
-            text=f"**Your Telegram ID :** {update.from_user.id}",
+            text=f"**Your Telegram ID :** {message.from_user.id}",
             disable_web_page_preview=True,
             reply_markup=keyboard
         ) 
