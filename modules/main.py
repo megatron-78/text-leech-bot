@@ -74,11 +74,11 @@ owner_id = [7535195022]
 
 @bot.on_message(filters.command("add_auth") & filters.user(owner_id))
 async def add_auth_user(client: Client, message: Message):
-    global authorized_users
+    global auth_users
     try:
         new_user_id = int(message.text.split(maxsplit=1)[1])
         if new_user_id not in auth_users:
-            authorized_users.append(new_user_id)
+            auth_users.append(new_user_id)
             await message.reply(f"User {new_user_id} added to authorized users.")
         else:
             await message.reply(f"User {new_user_id} is already in the authorized users list.")
