@@ -81,7 +81,13 @@ async def account_login(bot: Client, m: Message):
                     InlineKeyboardButton("✜ 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫👨‍💻 ✜" ,url="https://t.me/mk2648") ]                               
             ]))
 
+@bot.on_message(filters.command("ic") & filters.channel)
+async def get_channel_id(client, message):
+    channel = message.chat
+    await message.reply_text(f"Id : {channel.id}")
 
+
+    
 @bot.on_message(filters.command("id"))
 async def id(client: Client, message: Message):
     chat_id = message.chat.id
