@@ -67,7 +67,79 @@ async def main():
             await asyncio.sleep(3600)  # Run forever, or until interrupted
     except (KeyboardInterrupt, SystemExit):
         await stop_bot()
+
+
+from pyrogram import Client, filters
+
+# Initialize the Pyrogram Client
+app = Client(
+    "my_bot",
+    api_id=YOUR_API_ID,           # Replace with your API ID
+    api_hash=YOUR_API_HASH,       # Replace with your API Hash
+    bot_token=YOUR_BOT_TOKEN      # Replace with your Bot Token
+)
+
+# List to store authorized channel IDs
+authorized_channels = []
+
+# Command Handler to authorize a channel
+@app.on_message(filters.command("add_channel") & filters.user([YOUR_USER_ID]))
+async def add_channel(client, message):
+    if message.chat.type == "channel":
+        # Get the channel ID
+        channel_id = message.chat.id
+        
+        # Add the channel to the authorized list
+        if channel_id not in authorized_channels:
+            authorized_channels.append(channel_id)
+            await message.reply_text(f"Channel `{channel_id}` has been authorized to use the bot.")
+        else:
+            await message.reply_text(f"Channel `{channel_id}` is already authorized.")
+    else:
+        await message.reply_text("This command can only be used in channels.")
+
+
+import json
+
+# Load authorized channels from a file
+def load_authorized_channels():
+    try:
+        with open("authorized_channels.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
+# Save authorized channels to a file
+def save_authorized_channels():
+    with open("authorized_channels.json", "w") as f:
+        json.dump(authorized_channels, f)
+
+authorized_channels = load_authorized_channels()
+
+# Add the channel to the authorized list and save it to the file
+if channel_id not in authorized_channels:
+    authorized_channels.append(channel_id)
+    save_authorized_channels()
     
+
+
+# Restrict commands to authorized channels only
+@app.on_message(filters.command("start") & filters.channel)
+async def start_in_channel(client, message):
+    # Check if the channel is authorized
+    if message.chat.id in authorized_channels:
+        await message.reply_text("This channel is authorized to use the bot.")
+    else:
+        await message.reply_text("This channel is not authorized to use the bot. Use `/add_channel` to authorize.")
+
+# Start the bot
+app.run()
+
+
+
+
+
+
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
